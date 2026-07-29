@@ -59,9 +59,9 @@ const certificateSchema = new mongoose.Schema(
       index: true,
     },
 
-    images: {
-      type: [String], // Cloudinary URLs (f_auto,q_auto already good)
-      default: [],
+    image: {
+      type: String,
+      default: "",
     },
 
     link: {

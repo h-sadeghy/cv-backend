@@ -1,20 +1,28 @@
 import express from "express";
 
 import { requireAuth, requireAdmin } from "./../middlewares/auth.middleware.js";
+
 import {
-  getOrderBySlug,
-  createOrder,
-  updateOrder,
-  deleteOrder,
-} from "../controllers/admin/orders.controller.js";
+  createProduct,
+  deleteProduct,
+  getProductById,
+  getProducts,
+  updateProduct,
+} from "../controllers/admin/products.controller.js";
 
 const router = express.Router();
 
 router.use(requireAuth, requireAdmin);
+router.get("/me", requireAuth, (req, res) => {
+  res.json({
+    admin: req.admin,
+  });
+});
 
-router.get("/orders", getOrderBySlug);
-router.post("/orders", createOrder);
-router.put("/orders/:id", updateOrder);
-router.delete("/orders/:id", deleteOrder);
+router.post("/products", requireAuth, requireAdmin, createProduct);
+router.get("/products", getProducts);
+router.get("/products/:id", getProductById);
+router.put("/products/:id", updateProduct);
+router.delete("/products/:id", deleteProduct);
 
 export default router;

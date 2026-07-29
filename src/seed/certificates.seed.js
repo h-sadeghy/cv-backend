@@ -7,7 +7,7 @@ dotenv.config();
 
 async function seedDatabase() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(process.env.MONGODB_URI, { dbName: "cv" });
     console.log("→ Connected to MongoDB");
 
     await Certificate.deleteMany({});
@@ -29,7 +29,7 @@ async function seedDatabase() {
         date: new Date(`${item.date}-01`),
         location: item.location,
         countryCode: item.countryCode,
-        images: Array.isArray(item.images) ? item.images : [],
+        image: item.image ? item.image : [],
         link: item.link,
         keywords: Array.isArray(item.keywords)
           ? item.keywords.map((k) => k.trim())

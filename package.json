@@ -5,14 +5,16 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/server.js",
-    "seed:test": "node src/seed/certificates.seed.js"
+    "dev": "nodemon src/server.js",
+    "seed:test": "node src/seed/certificates.seed.js",
+    "seed:admin": "node src/seed/admin.seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@persian-tools/persian-tools": "^4.0.4",
     "bcryptjs": "^3.0.3",
     "cloudinary": "^1.41.3",
     "cors": "^2.8.6",

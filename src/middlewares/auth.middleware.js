@@ -11,7 +11,8 @@ export const requireAuth = (req, res, next) => {
 
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = payload;
+
+    req.admin = payload;
     next();
   } catch {
     return res.status(401).json({ message: "Invalid token" });
@@ -19,7 +20,8 @@ export const requireAuth = (req, res, next) => {
 };
 
 export const requireAdmin = (req, res, next) => {
-  if (!req.user || req.user.role !== "admin") {
+  console.log("requireAdmin", req.admin);
+  if (!req.admin || req.admin.role !== "admin") {
     return res.status(403).json({ message: "Admin only" });
   }
 

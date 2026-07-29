@@ -12,9 +12,7 @@ export const certificates = [
     date: "2024-02",
     location: "ملبورن استرالیا",
     countryCode: "AU",
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535366/australia1_qbfpuj.jpg",
-    ],
+    image: "/static/certificates/australia1.jpg",
     link: "https://www.researchgate.net/publication/379873077_Clinical_Pain_Alleviation_and_Reduction_Based_on_Hypnosis_Approaches",
     keywords: [
       "Hypnosis ، Pain Reduction ، Treatment ، Clinical Pain Relief ، Pain Alleviation",
@@ -33,9 +31,7 @@ export const certificates = [
 
     countryCode: "AU",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535392/australia2_i20s4d.jpg",
-    ],
+    image: "/static/certificates/australia2.jpg",
     link: "https://www.researchgate.net/publication/379873667_Applications_of_IMU_Devices_Regarding_Civil_Engineering",
     keywords: [
       "IMU Sensors ، IMU Devices ، Civil Engineering ، Construction ، Localization",
@@ -55,9 +51,7 @@ export const certificates = [
 
     countryCode: "AU",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535505/australia3_c5xj5a.jpg",
-    ],
+    image: "/static/certificates/australia3.jpg",
     link: "https://www.researchgate.net/publication/379873343_Psychological_Approach_Regarding_The_Effect_of_Hypnotherapy_in_Depression_Management",
     keywords: [
       "Depression ، Hypnotherapy ، Cognitive Hypnotherapy ، Hypnosis ، Psychotherapy",
@@ -77,9 +71,7 @@ export const certificates = [
 
     countryCode: "AU",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535347/australia4_b1qabb.jpg",
-    ],
+    image: "/static/certificates/australia4.jpg",
     link: "https://www.researchgate.net/publication/379873582_Construction_Activity_Monitoring_and_Measurement_Based_on_IMU_Devices",
     keywords: [
       "Civil Engineering ، Construction ، Monitoring ، Measurement ، IMU",
@@ -99,9 +91,7 @@ export const certificates = [
 
     countryCode: "AT",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535714/austria1_mpf9h5.jpg",
-    ],
+    image: "/static/certificates/austria.jpg",
     link: "https://www.researchgate.net/publication/370129685_Comprehensive_and_Cognitive_Approaches_in_Rehabilitation_Design_using_IMUs_for_STEM_Branch_Providing_Novel_IMU-Based_System_Design_via_Machine_Learning_Algorithms",
     keywords: [
       "IMU Sensors ، Biomedical Applications ، Rehabilitation ، Sports ، Real-Time Monitoring ، Cognitive and Behavioral Therapy",
@@ -122,9 +112,7 @@ export const certificates = [
 
     countryCode: "BE",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770535747/belgium1_mn48jn.jpg",
-    ],
+    image: "/static/certificates/belgium.jpg",
     link: "https://www.researchgate.net/publication/370129375_Applications_of_Internet_of_Things_for_Future_Smart_Systems_A_Cognitive_Behavioral_Practical_and_Management-Based_Approach_within_STEM_Branch",
     keywords: [
       "Internet of Things ، Management ، Smart Systems ، Cognitive and Behavioral Approaches ، Biomedical Applications",
@@ -144,9 +132,7 @@ export const certificates = [
 
     countryCode: "DK",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536149/denmark1_gxr8hs.jpg",
-    ],
+    image: "/static/certificates/denmark1.jpg",
     link: "https://www.researchgate.net/publication/377761970_Evaluation_and_Analysis_of_QRS_Complex_in_Electrocardiogram_Signals_for_Athletes",
     keywords: [
       "Electrocardiogram (ECG) ، Signal Processing ، QRS ، Digital Filtering ، Detection Algorithm ، Athletes ، Sports",
@@ -169,9 +155,7 @@ export const certificates = [
 
     countryCode: "DK",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536167/denmark2_rulrwv.jpg",
-    ],
+    image: "/static/certificates/denmark2.jpg",
     link: "https://www.researchgate.net/publication/375922575_A_Review_on_Data_Mining_Techniques_For_Healthcare_Applications",
     keywords: [
       "Data Mining ، Healthcare and Data Mining ، Health Informatics ، SVM",
@@ -190,9 +174,7 @@ export const certificates = [
 
     countryCode: "DK",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536028/denmark3_da5w7u.jpg",
-    ],
+    image: "/static/certificates/denmark3.jpg",
     link: "https://www.researchgate.net/publication/375922477_A_Deeper_Review_on_Applications_of_Machine_Learning_in_Data_Mining",
     keywords: ["Data Mining ، Applications of Data Mining ، Machine Learning"],
   },
@@ -209,9 +191,7 @@ export const certificates = [
 
     countryCode: "DK",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536175/denmark4_vj5tku.jpg",
-    ],
+    image: "/static/certificates/denmark4.jpg",
     link: "https://www.researchgate.net/publication/375922618_Data_Mining_and_Its_Applications_In_Internet_of_Things",
     keywords: [
       "Data Mining ، Internet of Things ، Machine Learning ، Data Analytics",
@@ -231,9 +211,7 @@ export const certificates = [
 
     countryCode: "DE",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536474/germany1_l5wo0a.jpg",
-    ],
+    image: "/static/certificates/germany1.jpg",
     link: "https://www.researchgate.net/publication/370129937_Plants_Health_and_Growth_Analysis_Based_on_Image_Processing_and_Machine_Learning_Approaches_in_STEM_Branch",
     keywords: [
       "image processing ، plant growth ، plant health ، machine learning ، programming",
@@ -253,9 +231,7 @@ export const certificates = [
 
     countryCode: "DE",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536579/germany4_nkzhdo.jpg",
-    ],
+    image: "/static/certificates/germany4.jpg",
     link: "https://www.researchgate.net/publication/372968164_Precise_Toothbrushing_by_Wrist_Monitoring_Using_IMU_for_Better_Dental_Healthcare",
     keywords: [
       "Dental Care ، Toothbrushing ، Monitoring ، IMU Devices ، Oral Health",
@@ -275,9 +251,7 @@ export const certificates = [
 
     countryCode: "DE",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536659/germany5_tg10wt.jpg",
-    ],
+    image: "/static/certificates/germany5.jpg",
     link: "https://www.researchgate.net/publication/372966800_Interactive_Dental_Healthcare_via_Monitoring_Tooth_Brushing_for_Children",
     keywords: [
       "Effective Dental Care ، Teeth Cleaning ، Monitoring ، Interactive Aid ، Dental Care",
@@ -296,9 +270,7 @@ export const certificates = [
 
     countryCode: "DE",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536649/germany6_shyycq.jpg",
-    ],
+    image: "/static/certificates/germany6.jpg",
     link: "https://www.researchgate.net/publication/372966778_Hand_Scaling_Measurement_for_Dental_Hygienist_Based_on_Training",
     keywords: [
       "Dental Hygienists ، Dental Instruction ، IMU Devices ، Dentistry Measurements ، Dental Health",
@@ -317,9 +289,7 @@ export const certificates = [
 
     countryCode: "TR",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536882/turkey1_watqy3.jpg",
-    ],
+    image: "/static/certificates/turkey1.jpg",
     link: "https://www.researchgate.net/publication/342865068_Lane_Weaving_and_Vehicle_Plate_Detection_based_on_CNN",
     keywords: [
       "Vehicle detection - CNN- License plate detection - Lane Weaving- OCR",
@@ -339,9 +309,7 @@ export const certificates = [
 
     countryCode: "TR",
 
-    images: [
-      "https://res.cloudinary.com/donkupqgi/image/upload/f_auto,q_auto/v1770536885/turkey2_bicxyb.jpg",
-    ],
+    image: "/static/certificates/turkey2.jpg",
     link: "https://www.researchgate.net/publication/342145524_Design_and_Implementation_of_Wireless_IMU-based_Posture_Correcting_Biofeedback_System",
     keywords: [
       "Posture-Correction-Biofeedback-Inertial Measurement Unit-Head/Neck Angle",

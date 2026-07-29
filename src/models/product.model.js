@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const orderSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     /* ---------- Conference info ---------- */
     title: {
@@ -9,16 +9,23 @@ const orderSchema = new mongoose.Schema(
       trim: true,
       maxlength: 300,
     },
-
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 5000,
+    },
+    slug: { type: String, required: true, unique: true },
     type: {
       type: String,
-      enum: ["کنفرانس", "ژورنال"],
       required: true,
+      enum: ["کنفرانس", "ژورنال"],
     },
 
     tags: {
-      type: String,
+      type: [String],
       index: true,
+      default: [],
     },
 
     year: {
@@ -26,48 +33,25 @@ const orderSchema = new mongoose.Schema(
       required: true,
     },
 
-    date: {
-      type: String, // "2024-02"
+    month: {
+      type: Number,
       required: true,
-    },
-
-    location: {
-      type: String,
-      required: true,
+      min: 0,
+      max: 12,
     },
 
     country: {
       type: String,
       required: true,
     },
-
-    countryCode: {
+    image: {
       type: String,
-      uppercase: true,
-      minlength: 2,
-      maxlength: 3,
+      default: null,
     },
-
-    flag: {
-      type: String,
-      default: "",
-    },
-
-    images: [
-      {
-        url: String,
-        public_id: String,
-      },
-    ],
-
-    link: {
-      type: String,
-    },
-
     keywords: {
-      type: String,
+      type: [String],
     },
-
+    price: { type: Number, required: true },
     /* ---------- Slot status ---------- */
     status: {
       type: String,
@@ -83,4 +67,4 @@ const orderSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.model("Order", orderSchema);
+export default mongoose.model("Product", productSchema);
