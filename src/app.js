@@ -9,6 +9,7 @@ import adminRoutes from "./routes/admin.routes.js";
 import ordersRoutes from "./routes/order.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 const PORT = process.env.PORT || 5000;
+
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -38,7 +39,6 @@ app.use(
   }),
 );
 app.use(express.json());
-
 app.get("/", (req, res) => {
   res.status(200).send("API is running");
 });
