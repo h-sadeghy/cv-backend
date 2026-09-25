@@ -14,13 +14,15 @@ export const requireAuth = (req, res, next) => {
 
     req.admin = payload;
     next();
-  } catch {
-    return res.status(401).json({ message: "Invalid token" });
+  } catch (error) {
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).json({ message: "Token Expired" });
+    }
+    return res.status(401).json({ message: "Invalid Token" });
   }
 };
 
 export const requireAdmin = (req, res, next) => {
-  console.log("requireAdmin", req.admin);
   if (!req.admin || req.admin.role !== "admin") {
     return res.status(403).json({ message: "Admin only" });
   }

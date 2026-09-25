@@ -4,12 +4,10 @@ import connectDB from "./config/db.js";
 import Admin from "./models/admin.model.js";
 import certificatesRoutes from "./routes/certificates.routes.js";
 import authRoutes from "./routes/auth.routes.js";
-import {
-  getCertById,
-  getCerts,
-} from "./controllers/certificates.controller.js";
-import ordersRoutes from "./routes/products.routes.js";
+import productsRoutes from "./routes/products.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
+import ordersRoutes from "./routes/order.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
 const PORT = process.env.PORT || 5000;
 import path from "path";
 import { fileURLToPath } from "url";
@@ -21,7 +19,6 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://cv-nine-kappa-74.vercel.app",
 ];
-app.use(express.json());
 app.use("/static", express.static(path.join(__dirname, "static")));
 
 app.use(
@@ -40,13 +37,16 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.status(200).send("API is running");
 });
 app.use("/api/certificates", certificatesRoutes);
-app.use("/api/products", ordersRoutes);
-
+app.use("/api/products", productsRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/orders", ordersRoutes);
+
+app.use("/api/payments", paymentRoutes);
 export default app;

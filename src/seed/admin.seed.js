@@ -3,13 +3,12 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import Admin from "../models/admin.model.js"; // adjust path
-
+import connectDB from "../config/db.js";
 dotenv.config();
 
 const seed = async () => {
   try {
-    await mongoose.connect(process.env.MONGODBNEW);
-
+    await connectDB();
     const email = process.env.SEED_ADMIN_EMAIL || "iman@admin.com";
     const password = process.env.SEED_ADMIN_PASSWORD || "123123123";
     const name = process.env.SEED_ADMIN_NAME || "Super Admin";

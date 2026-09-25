@@ -59,16 +59,44 @@ export const createProduct = async (req, res) => {
         success: false,
       });
     }
+    const MAX_ATTEMPTS = 10;
     const baseSlug = generateBaseSlug(title);
     let slug = baseSlug;
     let counter = 1;
-
-    while (await Product.findOne({ slug })) {
-      slug = `${baseSlug}-${counter++}`;
+    let attempts = 0;
+    while (attempts < MAX_ATTEMPTS) {
+      const exists = await Product.exists({ slug });
+      if (!exists) break;
+      attempts++;
+      slug =
+        attempts < MAX_ATTEMPTS
+          ? `${baseSlug}-${attempts}`
+          : `${baseSlug}-${Date.now().toString(36)}`;
     }
+    
+    const VALID_COUNTRY_CODES = new Set([
+      "us",
+      "ca",
+      "de",
+      "dk",
+      "be",
+      "fr",
+      "gb",
+      "au",
+      "tr",
+      "it",
+      "es",
+      "nl",
+    ]);
+    const countryCode = country.trim().toLowerCase();
 
-    const countryCode = country.toLowerCase();
-    const flagUrl = `/static/flags/${countryCode}.jpg`;
+    if (!VALID_COUNTRY_CODES.has(countryCode)) {
+      return res.status(400).json({
+        message: "Invalid country code",
+        success: false,
+      });
+    }
+    const flagUrl = `/static/flags/${countryCode}.webp`;
     const newProduct = {
       title,
       description,
@@ -91,7 +119,13 @@ export const createProduct = async (req, res) => {
       message: "Product Created Successfully",
     });
   } catch (error) {
-    res
+    if (error.code === 11000 && error.keyPattern?.slug) {
+      return res.status(409).json({
+        message: "Slug conflict, please try again",
+        success: false,
+      });
+    }
+    return res
       .status(500)
       .json({ message: "Failed to create product", success: false });
   }
@@ -179,11 +213,7 @@ export const updateProduct = async (req, res) => {
 // Admin - Delete
 export const deleteProduct = async (req, res) => {
   try {
-    const deleted = await Product.findByIdAndDelete(req.params.id);
-
-    if (!deleted) {
-      return res.status(404).json({ message: "Product not found" });
-    }
+    const item = await Product.findByIdAndDelete(req.params.id);
 
     res.json({ message: "Product deleted successfully" });
   } catch (error) {

@@ -7,7 +7,7 @@ dotenv.config();
 
 async function seedDatabase() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI, { dbName: "cv" });
+    await mongoose.connect(process.env.MONGODB_LOCAL);
     console.log("→ Connected to MongoDB");
 
     await Certificate.deleteMany({});
